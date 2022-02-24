@@ -22,12 +22,9 @@ vim.cmd('nnoremap <silent><leader>ne :Lspsaga diagnostic_jump_next<CR>')
 vim.cmd('nnoremap <silent><leader>pe :Lspsaga diagnostic_jump_prev<CR>')
 
 -- fuzzy finder
--- nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
--- nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
--- nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
--- nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 vim.api.nvim_set_keymap('n','<leader>ff','<cmd>lua require(\'telescope.builtin\').find_files()<cr>',{noremap = true,silent = true})
 vim.api.nvim_set_keymap('n','<leader>fg','<cmd>lua require(\'telescope.builtin\').live_grep()<cr>',{noremap = true,silent = true})
-vim.api.nvim_set_keymap('n','<leader>fb','<cmd>lua require(\'telescope.builtin\').buffers()<cr>',{noremap = true,silent = true})
+vim.api.nvim_set_keymap('n','<leader>fbf','<cmd>lua require(\'telescope.builtin\').buffers()<cr>',{noremap = true,silent = true})
 vim.api.nvim_set_keymap('n','<leader>fh','<cmd>lua require(\'telescope.builtin\').help_tags()<cr>',{noremap = true,silent = true})
+vim.api.nvim_set_keymap('n','<leader>fb','<cmd>lua require(\'telescope.builtin\').current_buffer_fuzzy_find()<cr>',{noremap = true,silent = true})

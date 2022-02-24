@@ -69,9 +69,16 @@ return require('packer').startup(function()
         },
         config = function () require('telescope-config') end
 }
-
     -- lazy git
     use 'kdheepak/lazygit.nvim'
+
+    -- which key
+    -- Lua
+use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key-config")  end
+}
 
   end)
 
