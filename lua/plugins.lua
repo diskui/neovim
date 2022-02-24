@@ -60,9 +60,18 @@ return require('packer').startup(function()
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter',
     config = function() require('treesitter-config') end
+    }
+
+    -- fuzzy finder telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { {'nvim-lua/plenary.nvim'},{'BurntSushi/ripgrep'},
+        },
+        config = function () require('telescope-config') end
 }
 
-
+    -- lazy git
+    use 'kdheepak/lazygit.nvim'
 
   end)
 
