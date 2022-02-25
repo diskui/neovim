@@ -20,10 +20,10 @@ vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<cr>', { noremap = true, 
 
 
 -- 错误显示与跳转
-vim.cmd('nnoremap <silent><leader>e <cmd>lua require\'lspsaga.diagnostic\'.show_line_diagnostics()<CR>')
 
-vim.cmd('nnoremap <silent><leader>ne :Lspsaga diagnostic_jump_next<CR>')
-vim.cmd('nnoremap <silent><leader>pe :Lspsaga diagnostic_jump_prev<CR>')
+vim.api.nvim_set_keymap('n','<leader>e','<cmd>lua require(\'lspsaga.diagnostic\').show_line_diagnostics()<cr>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','<leader>ne',':Lspsaga diagnostic_jump_next<cr>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','<leader>pe',':Lspsaga diagnostic_jump_prev<cr>',{noremap = true, silent = true})
 
 -- fuzzy finder
 

@@ -10,7 +10,7 @@ require('keymapping')
 
 require('plugins')
 
-require('lsp')
+-- require('lsp')
 
 
 -- 语法高亮
@@ -58,3 +58,8 @@ vim.o.mouse = 'a'
 
 -- set the timeout length
 vim.o.tm = 50
+
+
+
+
+

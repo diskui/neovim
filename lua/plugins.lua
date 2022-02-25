@@ -3,8 +3,8 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
+    use {'neovim/nvim-lspconfig',config = function() require('lsp-config') end}
+    use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
@@ -60,28 +60,34 @@ return require('packer').startup(function()
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter',
     config = function() require('treesitter-config') end
-    }
-
-    -- fuzzy finder telescope
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'},{'BurntSushi/ripgrep'},
-        },
-        config = function () require('telescope-config') end
 }
-    -- lazy git
-    use 'kdheepak/lazygit.nvim'
 
-    -- which key
-    -- Lua
-    use {
-        "folke/which-key.nvim",
-        config = function()
-            require("which-key-config")  end
-        }
+-- fuzzy finder telescope
+use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'},{'BurntSushi/ripgrep'},
+},
+config = function () require('telescope-config') end
+}
+-- lazy git
+use 'kdheepak/lazygit.nvim'
+
+-- which key
+-- Lua
+use {
+    "folke/which-key.nvim",
+    config = function()
+        require("which-key-config")  end
+    }
 
     -- terminal integration
     use 'nikvdp/neomux'
 
-  end)
+    -- lsp kind
+    use {'onsails/lspkind-nvim'}
+
+    -- lsp color
+    use {'folke/lsp-colors.nvim',config = function() require('lspcolor-config') end}
+
+end)
 
