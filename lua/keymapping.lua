@@ -35,3 +35,6 @@ vim.api.nvim_set_keymap('n','<leader>fb','<cmd>lua require(\'telescope.builtin\'
 
 -- open lazy git
 vim.api.nvim_set_keymap('n','<leader>lg',':LazyGit<cr>',{noremap = true, silent = true})
+
+-- esc to exit insert mode in terminal mode
+vim.api.nvim_set_keymap('t','<Esc>','<C-\\><C-n>',{noremap = true, silent = true})

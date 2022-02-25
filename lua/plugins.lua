@@ -74,11 +74,14 @@ return require('packer').startup(function()
 
     -- which key
     -- Lua
-use {
-  "folke/which-key.nvim",
-  config = function()
-    require("which-key-config")  end
-}
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key-config")  end
+        }
+
+    -- terminal integration
+    use 'nikvdp/neomux'
 
   end)
 
