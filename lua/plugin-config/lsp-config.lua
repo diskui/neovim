@@ -63,10 +63,38 @@ cmp.setup {
   },
   -- lsp kind settings
   formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol_text', -- show only symbol annotations
-      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-    })
+      format = lspkind.cmp_format({
+          mode = 'symbol_text', -- show only symbol annotations
+          maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          preset = 'codicons',
+          symbol_map = {
+              Text = "",
+              Method = "",
+              Function = "",
+              Constructor = "",
+              Field = "ﰠ",
+              Variable = "",
+              Class = "ﴯ",
+              Interface = "",
+              Module = "",
+              Property = "ﰠ",
+              Unit = "塞",
+              Value = "",
+              Enum = "",
+              Keyword = "",
+              Snippet = "",
+              Color = "",
+              File = "",
+              Reference = "",
+              Folder = "",
+              EnumMember = "",
+              Constant = "",
+              Struct = "פּ",
+              Event = "",
+              Operator = "",
+              TypeParameter = ""
+          },
+      })
   }
 }
 
@@ -74,8 +102,8 @@ cmp.setup {
 
 -- clang setup
 lspconfig.clangd.setup({
-	on_attach = on_attach,
-	capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- capabilities = capabilities,
 
 	cmd = { "clangd" },
 	filetypes = { "c", "cpp", "objc", "objcpp" },
@@ -87,8 +115,8 @@ lspconfig.clangd.setup({
 
 -- quick_lint_js setup
 require'lspconfig'.quick_lint_js.setup{
-	on_attach = on_attach,
-	capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- capabilities = capabilities,
 
 	cmd = { "quick-lint-js", "--lsp-server" },
 	filetypes = { "javascript" },
@@ -110,8 +138,8 @@ saga.init_lsp_saga {
 
 -- diagnosticls setup
 lspconfig.diagnosticls.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- capabilities = capabilities,
 	filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
 	init_options = {
 		linters = {
@@ -167,7 +195,7 @@ lspconfig.diagnosticls.setup {
 	}
 }
 
--- icons
+-- icons of diagnosticls
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 vim.lsp.diagnostic.on_publish_diagnostics, {
 	underline = true,
@@ -183,8 +211,8 @@ vim.lsp.diagnostic.on_publish_diagnostics, {
 
 -- tsserver setup
 lspconfig.tsserver.setup{
-	on_attach = on_attach,
-	capabilities = capabilities,
+	-- on_attach = on_attach,
+	-- capabilities = capabilities,
 	cmd = { "typescript-language-server", "--stdio" },
 	filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
 	init_options = {
@@ -201,9 +229,8 @@ table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
 lspconfig.sumneko_lua.setup {
-	on_attach = on_attach,
-	capabilities = capabilities,
-
+	-- on_attach = on_attach,
+	-- capabilities = capabilities,
 	settings = {
 		Lua = {
 			runtime = {

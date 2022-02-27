@@ -3,7 +3,7 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
 
     -- LSP
-    use {'neovim/nvim-lspconfig',config = function() require('lsp-config') end}
+    use {'neovim/nvim-lspconfig',config = function() require('plugin-config/lsp-config') end}
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
@@ -19,39 +19,39 @@ return require('packer').startup(function()
         requires = {
             'kyazdani42/nvim-web-devicons', -- optional, for file icon
         },
-        config = function() require('tree-config') end
+        config = function() require('plugin-config/tree-config') end
     }
 
     -- comment
     use {
         'numToStr/Comment.nvim',
         config = function()
-            require('comment-config')
+            require('plugin-config/comment-config')
         end
     }
 
 
     -- material colorscheme
-    use {'marko-cerovac/material.nvim',config = function() require('material-config') end}
+    use {'marko-cerovac/material.nvim',config = function() require('plugin-config/material-config') end}
 
     -- molokai colorscheme
-    use {'tanvirtin/monokai.nvim',config = function() require('monokai-config') end}
+    use {'tanvirtin/monokai.nvim',config = function() require('plugin-config/monokai-config') end}
 
 
     -- auto pairs
-    use {'windwp/nvim-autopairs',config = function () require('autopair-config') end}
+    use {'windwp/nvim-autopairs',config = function () require('plugin-config/autopair-config') end}
 
     -- bufferline
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons',config = function() require('bufferline-config') end}
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons',config = function() require('plugin-config/bufferline-config') end}
 
     -- windline
-    use {'windwp/windline.nvim',config = function() require('windline-config') end}
+    use {'windwp/windline.nvim',config = function() require('plugin-config/windline-config') end}
 
     --rainbow
-    use {'p00f/nvim-ts-rainbow',config = function() require('rainbow-config') end}
+    use {'p00f/nvim-ts-rainbow',config = function() require('plugin-config/rainbow-config') end}
 
     --markdown preview
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() require('markdown-config') end, ft = { "markdown" }, })
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() require('plugin-config/markdown-config') end, ft = { "markdown" }, })
     --markdown syntax
     use 'preservim/vim-markdown'
 
@@ -59,7 +59,7 @@ return require('packer').startup(function()
 
     -- treesitter
     use {'nvim-treesitter/nvim-treesitter',
-    config = function() require('treesitter-config') end
+    config = function() require('plugin-config/treesitter-config') end
 }
 
 -- fuzzy finder telescope
@@ -67,7 +67,7 @@ use {
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'},{'BurntSushi/ripgrep'},
 },
-config = function () require('telescope-config') end
+config = function () require('plugin-config/telescope-config') end
 }
 -- lazy git
 use 'kdheepak/lazygit.nvim'
@@ -77,7 +77,7 @@ use 'kdheepak/lazygit.nvim'
 use {
     "folke/which-key.nvim",
     config = function()
-        require("which-key-config")  end
+        require("plugin-config/which-key-config")  end
     }
 
     -- terminal integration
@@ -87,7 +87,7 @@ use {
     use {'onsails/lspkind-nvim'}
 
     -- lsp color
-    use {'folke/lsp-colors.nvim',config = function() require('lspcolor-config') end}
+    use {'folke/lsp-colors.nvim',config = function() require('plugin-config/lspcolor-config') end}
 
 end)
 

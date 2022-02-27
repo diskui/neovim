@@ -16,7 +16,7 @@ vim.api.nvim_set_keymap('n','<leader>np',':bp<cr>',{noremap = true,silent = true
 vim.api.nvim_set_keymap('n', 'fm', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
 
 -- 打开markdown预览
-vim.api.nvim_set_keymap('n', '<C-m>', ':MarkdownPreview<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>m', ':MarkdownPreview<cr>', { noremap = true, silent = true })
 
 
 -- 错误显示与跳转
