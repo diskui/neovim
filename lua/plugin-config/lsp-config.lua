@@ -7,7 +7,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {"clangd","quick_lint_js","diagnosticls","tsserver","sumneko_lua"}
+local servers = {"clangd","quick_lint_js","diagnosticls","tsserver","sumneko_lua","cssls"}
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         on_attach = on_attach,
@@ -134,7 +134,7 @@ saga.init_lsp_saga {
 
 -- diagnosticls setup
 lspconfig.diagnosticls.setup {
-    filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'pandoc' },
+    filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'pandoc' },
     init_options = {
         linters = {
             eslint = {
@@ -176,11 +176,11 @@ lspconfig.diagnosticls.setup {
             }
         },
         formatFiletypes = {
-            css = 'prettier',
+            -- css = 'prettier',
             javascript = 'eslint_d',
             javascriptreact = 'eslint_d',
-            scss = 'prettier',
-            less = 'prettier',
+            -- scss = 'eslint_d',
+            -- less = 'prettier',
             typescript = 'eslint_d',
             typescriptreact = 'eslint_d',
             json = 'prettier',
@@ -246,5 +246,22 @@ lspconfig.sumneko_lua.setup {
     },
 }
 
-
+-- cssls setup
+lspconfig.cssls.setup{
+    cmd = { "vscode-css-language-server", "--stdio" },
+    filetypes = { "css", "scss", "less" },
+    root_dir = function() return vim.loop.cwd() end,
+    settings = {
+      css = {
+        validate = true
+      },
+      less = {
+        validate = true
+      },
+      scss = {
+        validate = true
+      }
+    },
+    single_file_support = true
+}
 
