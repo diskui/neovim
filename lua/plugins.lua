@@ -89,5 +89,8 @@ use {
     -- lsp color
     use {'folke/lsp-colors.nvim',config = function() require('plugin-config/lspcolor-config') end}
 
+    -- show start time
+    use 'dstein64/vim-startuptime'
+
 end)
 

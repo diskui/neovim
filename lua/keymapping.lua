@@ -1,3 +1,7 @@
+
+
+require('compile-run');
+
 -- 折行内移动
 vim.api.nvim_set_keymap('n', 'j', 'gj', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'k', 'gk', { noremap = true, silent = true })
@@ -13,7 +17,7 @@ vim.api.nvim_set_keymap('n','<leader>np',':bp<cr>',{noremap = true,silent = true
 
 
 -- 格式化代码
-vim.api.nvim_set_keymap('n', 'fm', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fm', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
 
 -- 打开markdown预览
 vim.api.nvim_set_keymap('n', '<leader>m', ':MarkdownPreview<cr>', { noremap = true, silent = true })
@@ -38,3 +42,11 @@ vim.api.nvim_set_keymap('n','<leader>lg',':LazyGit<cr>',{noremap = true, silent 
 
 -- esc to exit insert mode in terminal mode
 vim.api.nvim_set_keymap('t','<Esc>','<C-\\><C-n>',{noremap = true, silent = true})
+
+-- go to the declaration and definition
+vim.api.nvim_set_keymap('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>',{noremap = true, silent = true})
+
+
+
+
