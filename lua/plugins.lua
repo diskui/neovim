@@ -73,7 +73,6 @@ config = function () require('plugin-config/telescope-config') end
 use 'kdheepak/lazygit.nvim'
 
 -- which key
--- Lua
 use {
     "folke/which-key.nvim",
     config = function()
@@ -91,6 +90,9 @@ use {
 
     -- show start time
     use 'dstein64/vim-startuptime'
+
+    -- indent line
+    use {"lukas-reineke/indent-blankline.nvim",config = function()require('plugin-config/indent-line-config') end}
 
 end)
 

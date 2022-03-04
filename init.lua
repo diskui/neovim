@@ -26,6 +26,7 @@ vim.o.tabstop = 4
 vim.o.expandtab = true
 
 -- 缩进
+vim.o.autoindent = true
 vim.o.smartindent = true
 
 -- 颜色设置

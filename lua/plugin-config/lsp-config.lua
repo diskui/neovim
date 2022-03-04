@@ -1,6 +1,7 @@
 
 local lspconfig = require('lspconfig')
 
+
 -- completion settings
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -247,7 +248,9 @@ lspconfig.sumneko_lua.setup {
 }
 
 -- cssls setup
+capabilities.textDocument.completion.completionItem.snippetSupport = true;
 lspconfig.cssls.setup{
+    capabilities = capabilities,
     cmd = { "vscode-css-language-server", "--stdio" },
     filetypes = { "css", "scss", "less" },
     root_dir = function() return vim.loop.cwd() end,
@@ -264,4 +267,3 @@ lspconfig.cssls.setup{
     },
     single_file_support = true
 }
-
