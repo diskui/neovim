@@ -1,6 +1,12 @@
 return require('packer').startup(function()
+
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
+
+    -- speed up the startup of neovim
+    use 'lewis6991/impatient.nvim'
+
+    use {"nathom/filetype.nvim",config =function()require('plugin-config/filetype-config') end}
 
     -- LSP
     use {'neovim/nvim-lspconfig',config = function() require('plugin-config/lsp-config') end}
@@ -11,6 +17,9 @@ return require('packer').startup(function()
 
     -- lspsaga
     use {'tami5/lspsaga.nvim'}
+
+    -- diagnostics
+    use {'folke/trouble.nvim',config=function() require('plugin-config/trouble-config') end}
 
 
     -- tree
@@ -61,7 +70,6 @@ return require('packer').startup(function()
     use {'nvim-treesitter/nvim-treesitter',
     config = function() require('plugin-config/treesitter-config') end
 }
-
 -- fuzzy finder telescope
 use {
     'nvim-telescope/telescope.nvim',
@@ -83,7 +91,7 @@ use {
     use 'nikvdp/neomux'
 
     -- lsp kind
-    use {'onsails/lspkind-nvim'}
+    use {'onsails/lspkind-nvim',config=function()require('plugin-config/lspkind-config') end}
 
     -- lsp color
     use {'folke/lsp-colors.nvim',config = function() require('plugin-config/lspcolor-config') end}

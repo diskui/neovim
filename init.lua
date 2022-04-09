@@ -1,4 +1,8 @@
 
+
+-- speed up when start up
+require('impatient')
+
 -- leader key
 vim.api.nvim_set_keymap('n','<Space>','',{})
 
@@ -12,6 +16,16 @@ require('plugins')
 
 -- require('lsp')
 
+
+
+-- encoding setting
+vim.o.encoding = "utf-8"
+
+-- lines above and under the current line
+vim.o.scrolloff = 10
+
+-- share the clipboard of system
+-- vim.o.clipboard = "unnamedplus"
 
 -- 语法高亮
 vim.o.syntax = "on"
@@ -27,7 +41,7 @@ vim.o.expandtab = true
 
 -- 缩进
 vim.o.autoindent = true
-vim.o.smartindent = true
+-- vim.o.smartindent = true
 
 -- 颜色设置
 vim.o.termguicolors = true

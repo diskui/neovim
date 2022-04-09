@@ -22,7 +22,7 @@ vim.api.nvim_set_keymap('n','<leader>np',':bp<cr>',{noremap = true,silent = true
 vim.api.nvim_set_keymap('n', '<leader>fm', ':lua vim.lsp.buf.formatting()<cr>', { noremap = true, silent = true })
 
 -- 打开markdown预览
-vim.api.nvim_set_keymap('n', '<leader>m', ':MarkdownPreview<cr>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>md', ':MarkdownPreview<cr>', { noremap = true, silent = true })
 
 
 -- 错误显示与跳转
@@ -35,7 +35,7 @@ vim.api.nvim_set_keymap('n','<leader>pe',':Lspsaga diagnostic_jump_prev<cr>',{no
 
 vim.api.nvim_set_keymap('n','<leader>ff','<cmd>lua require(\'telescope.builtin\').find_files()<cr>',{noremap = true,silent = true})
 vim.api.nvim_set_keymap('n','<leader>fg','<cmd>lua require(\'telescope.builtin\').live_grep()<cr>',{noremap = true,silent = true})
-vim.api.nvim_set_keymap('n','<leader>fbf','<cmd>lua require(\'telescope.builtin\').buffers()<cr>',{noremap = true,silent = true})
+-- vim.api.nvim_set_keymap('n','<leader>fw','<cmd>lua require(\'telescope.builtin\').buffers()<cr>',{noremap = true,silent = true})
 vim.api.nvim_set_keymap('n','<leader>fh','<cmd>lua require(\'telescope.builtin\').help_tags()<cr>',{noremap = true,silent = true})
 vim.api.nvim_set_keymap('n','<leader>fb','<cmd>lua require(\'telescope.builtin\').current_buffer_fuzzy_find()<cr>',{noremap = true,silent = true})
 
@@ -50,5 +50,24 @@ vim.api.nvim_set_keymap('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>',{norem
 vim.api.nvim_set_keymap('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>',{noremap = true, silent = true})
 
 
+-- trouble
+vim.api.nvim_set_keymap("n", "<leader>xx", "<cmd>Trouble<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>",
+  {silent = true, noremap = true}
+)
+vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>",
+  {silent = true, noremap = true}
+)
 
 
