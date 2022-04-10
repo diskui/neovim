@@ -1,4 +1,11 @@
-require("nvim-treesitter.configs").setup {
+
+
+local status_ok, rainbow = pcall(require, "nvim-treesitter.config")
+if not status_ok then
+  return
+end
+
+rainbow.setup{
   highlight = {
       -- ...
   },
@@ -11,4 +18,6 @@ require("nvim-treesitter.configs").setup {
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
   }
-}
+
+
+    }

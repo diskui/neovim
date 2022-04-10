@@ -1,6 +1,10 @@
+local status_ok, monokai = pcall(require, "monokai")
+if not status_ok then
+  return
+end
 
-local monokai = require('monokai')
 local palette = monokai.classic
+
 monokai.setup {
     palette = {
         diff_text = '#133337',
@@ -23,3 +27,4 @@ monokai.setup {
         },
     }
 }
+

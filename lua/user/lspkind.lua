@@ -1,4 +1,10 @@
-require('lspkind').init({
+local status_ok, lspkind = pcall(require, "lspkind")
+if not status_ok then
+  return
+end
+
+
+lspkind.init({
     -- DEPRECATED (use mode instead): enables text annotations
     --
     -- default: true
@@ -46,4 +52,6 @@ require('lspkind').init({
       Operator = "",
       TypeParameter = ""
     },
+
+
 })
