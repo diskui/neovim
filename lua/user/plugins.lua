@@ -18,8 +18,8 @@ end
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -132,6 +132,20 @@ return packer.startup(function(use)
 
   -- lsp color
   use {'folke/lsp-colors.nvim'}
+
+  -- lsp for java
+  use 'mfussenegger/nvim-jdtls'
+
+  -- tokyonight colorscheme
+  use 'folke/tokyonight.nvim'
+
+  -- windline
+  use 'windwp/windline.nvim'
+
+  -- zen mode
+  use 'folke/zen-mode.nvim'
+
+
 
 
 

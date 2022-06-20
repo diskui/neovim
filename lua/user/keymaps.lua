@@ -42,5 +42,13 @@ keymap("n","<S-tab>",":tabp<cr>",opts)
 
 keymap("t","<Esc>","<C-\\><C-n>",opts)
 
+
+-- 输入法
+vim.api.nvim_command('autocmd InsertLeave * :silent !fcitx5-remote -c')
+vim.api.nvim_command('autocmd BufCreate *  :silent !fcitx5-remote -c')
+vim.api.nvim_command('autocmd BufEnter *  :silent !fcitx5-remote -c')
+vim.api.nvim_command('autocmd BufLeave *  :silent !fcitx5-remote -c')
+
+
 require("user.compile-run")
 

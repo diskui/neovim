@@ -12,7 +12,7 @@ local options = {
   showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
   -- showtabline = 2,                         -- always show tabs
   smartcase = false,                        -- smart case
-  smartindent = true,                      -- make indenting smarter again
+  smartindent = false,                      -- make indenting smarter again
   splitbelow = true,                       -- force all horizontal splits to go below current window
   splitright = true,                       -- force all vertical splits to go to the right of current window
   swapfile = false,                        -- creates a swapfile
@@ -32,6 +32,7 @@ local options = {
   wrap = true,                            -- display lines as one long line
   scrolloff = 10,                           -- is one of my fav
   sidescrolloff = 8,
+  autoindent = false,
   --guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
@@ -45,6 +46,7 @@ end
 -- vim.cmd 'autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE'
 
 
-vim.cmd "set whichwrap+=<,>,[,],h,l"
+-- vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+

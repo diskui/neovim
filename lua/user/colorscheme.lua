@@ -1,6 +1,7 @@
 vim.cmd [[
 try
-  colorscheme monokai_pro
+  set background=dark
+  colorscheme monokai 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark

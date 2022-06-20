@@ -3,7 +3,7 @@ if not status_ok then
   return
 end
 
-local palette = monokai.classic
+local palette = monokai.pro
 
 monokai.setup {
     palette = {

@@ -85,28 +85,46 @@ local mappings = {
     "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Find files",
   },
+  -- live grep
   ["fg"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
+  -- find in buffer
   ["fb"] = {"<cmd>lua require(\'telescope.builtin\').current_buffer_fuzzy_find()<cr>","Find Buffer"},
 
+  -- format the code
   ["fm"] = {"<cmd>lua vim.lsp.buf.formatting()<cr>", "Format"},
 
+  -- open markdown preview
   ["md"] = {":MarkdownPreview<cr>","MarkdownPreview"},
 
+  -- next error
   ["ne"] = {":Lspsaga diagnostic_jump_next<cr>","Next Error"},
 
+  -- previous error
   ["pe"] = {":Lspsaga diagnostic_jump_prev<cr>","Prev Error"},
 
+  -- show errors
   ["e"] = {"<cmd>lua require(\'lspsaga.diagnostic\').show_line_diagnostics()<cr>","Show Error"},
 
+  -- open lazy git
   ["lg"]  = {":LazyGit<cr>","Lazy Git"},
+
+  -- open the terminal
+  ["sh"] = {":Neomux<cr>","shell"},
+
+  -- zen mode
+  ["z"] = {":ZenMode<cr>","ZenMode"},
+
+  -- markdown preview using glow
+  ["gl"] = {":Glow<cr>","Glow"},
 
   x = {
     name = "Trouble",
     x = {"<cmd>Trouble<cr>","Trouble"},
     w = {"<cmd>Trouble workspace_diagnostics<cr>","Workspace Diagnostics"},
     d = {"<cmd>Trouble document_diagnostics<cr>","Document Diagnostics"},
-    }
+    },
+
 }
 
 which_key.setup(setup)
